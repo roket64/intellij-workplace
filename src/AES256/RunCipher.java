@@ -1,4 +1,4 @@
-package jencryption;
+package AES256;
 
 import java.util.Scanner;
 
