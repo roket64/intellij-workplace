@@ -26,7 +26,6 @@ public class FileCheckExample {
             } else
                 System.out.println("해당 객체는 폴더가 아닙니다" );
             System.out.println("===========================================" );
-
         }
     }
 }
