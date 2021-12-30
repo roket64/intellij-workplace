@@ -12,8 +12,8 @@ public class CharIOExample2 {
         PrintWriter pw = null;
 
         try{
-            br = new BufferedReader(new FileReader("src/charIOExamples/CharIOExam02.java"));
-            pw = new PrintWriter(new FileWriter("testFile.txt"));
+            br = new BufferedReader(new FileReader("src/charIOExamples/CharIOExample2.java"));
+            pw = new PrintWriter(new FileWriter("src/charIOExamples/testFile02.txt"));
             String line = null;
             while((line = br.readLine())!= null){
                 pw.println(line);
