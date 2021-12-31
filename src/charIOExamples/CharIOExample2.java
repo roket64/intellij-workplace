@@ -1,26 +1,28 @@
 package charIOExamples;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 
 public class CharIOExample2 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = null;
         PrintWriter pw = null;
+        String fileToRead;
+        String fileToWrite;
 
-        try{
-            br = new BufferedReader(new FileReader("src/charIOExamples/CharIOExample2.java"));
-            pw = new PrintWriter(new FileWriter("src/charIOExamples/testFile02.txt"));
+        try {
+            fileToRead = "src/charIOExamples/CharIOExample2.java";
+            fileToWrite = "src/charIOExamples/testFile02.txt";
+
+            br = new BufferedReader(new FileReader(fileToRead));
+            pw = new PrintWriter(new FileWriter(fileToWrite));
             String line = null;
-            while((line = br.readLine())!= null){
+
+            while ((line = br.readLine()) != null) {
                 pw.println(line);
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             pw.close();
             br.close();
         }
