@@ -23,16 +23,20 @@ public class FileCopyTest {
             FileInputStream inputFile = new FileInputStream(targetPlugin);
             FileOutputStream outputFile = new FileOutputStream(pluginCopy);
 
-            int fileList = 0;
+            int fileList;
             while ((fileList = inputFile.read()) != -1){
                 outputFile.write(fileList);
             }
-            inputFile.close();
-            outputFile.close();
+            try {
+                inputFile.close();
+                outputFile.close();
+            } catch (Exception e){
+                return -1;
+            }
+            return  0;
         } catch (Exception e){
             e.printStackTrace();
             return -1;
         }
-        return 0;
     }
 }
