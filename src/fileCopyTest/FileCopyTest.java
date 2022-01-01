@@ -15,7 +15,7 @@ public class FileCopyTest {
         this.targetPluginCopy = targetPluginCopy;
     }
 
-    public int copy() {
+    public boolean copy() {
         File targetPlugin = new File(targetPluginPath);
         File pluginCopy = new File(targetPluginCopy);
 
@@ -31,12 +31,12 @@ public class FileCopyTest {
                 inputFile.close();
                 outputFile.close();
             } catch (Exception e){
-                return -1;
+                return false;
             }
-            return  0;
+            return true;
         } catch (Exception e){
             e.printStackTrace();
-            return -1;
+            return false;
         }
     }
 }

@@ -7,11 +7,11 @@ public class FileCopyMain {
         String targetPluginCopy = pluginDirPath + "roketPlugin-1.0-SNAPSHOT.jar";
 
         FileCopyTest runCopy = new FileCopyTest(targetPluginPath, pluginDirPath, targetPluginCopy);
-        int cRETURN = runCopy.copy();
+        boolean returnInfo = runCopy.copy();
 
-        if (cRETURN == -1) {
+        if (!returnInfo) {
             System.out.println("Something went wrong...");
-        } else if (cRETURN == 0){
+        } else if (returnInfo){
             System.out.println("Everything fine.");
         }
     }
