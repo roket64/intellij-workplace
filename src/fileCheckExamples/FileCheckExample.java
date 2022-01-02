@@ -8,7 +8,7 @@ public class FileCheckExample {
         File file = new File("src/fileCheckExamples/testFiles/");
         File[] txtList = file.listFiles();
 
-        for (int i=0; i< txtList.length; i++) {
+        for (int i = 0; i < txtList.length; i++) {
             System.out.println("객체: " + txtList[i]);
 
             if(txtList[i].exists()) {
