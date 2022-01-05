@@ -16,5 +16,8 @@ public class RunCipher {
         String encryptedString = AES.encrypt(originalString, secretKey);
         String decryptedString = AES.decrypt(encryptedString, secretKey);
 
+        System.out.println("origianl text: " + originalString);
+        System.out.println("encrypted text: " + encryptedString);
+        System.out.println("decrypted text: " + decryptedString);
     }
 }
