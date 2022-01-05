@@ -9,9 +9,9 @@ public class RunCipher {
     public static void main(String[] args) {
         final String secretKey = "my_secret_key";
 
+        System.out.println("Waiting Input...");
         Scanner s = new Scanner(System.in);
         String originalString = s.nextLine();
-        System.out.println("Waiting Input...");
 
         String encryptedString = AES.encrypt(originalString, secretKey);
         String decryptedString = AES.decrypt(encryptedString, secretKey);
