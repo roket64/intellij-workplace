@@ -28,15 +28,24 @@ public class FileCopyTest {
                 outputFile.write(fileList);
             }
             try {
-                inputFile.close();
-                outputFile.close();
+                if (inputFile != null || outputFile != null){
+                    try {
+                        inputFile.close();
+                        outputFile.close();
+                        return true;
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        return false;
+                    }
+                }
             } catch (Exception e){
+                e.printStackTrace();
                 return false;
             }
-            return true;
         } catch (Exception e){
             e.printStackTrace();
             return false;
         }
+        return false;
     }
 }
