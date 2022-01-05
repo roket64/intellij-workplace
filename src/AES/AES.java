@@ -20,9 +20,7 @@ public class AES {
             key = sha.digest(key);
             key = Arrays.copyOf(key, 16);
             secretKey = new SecretKeySpec(key, "AES");
-        } catch (NoSuchAlgorithmException e) {
-            System.out.println(e.getMessage());
-        } catch (UnsupportedEncodingException e) {
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
             System.out.println(e.getMessage());
         }
     }
