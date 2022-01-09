@@ -8,27 +8,9 @@ public class PropertyMain {
         PropertyTest test = new PropertyTest(testkeyName, testValue,testConfigFilePath);
         String returnValue;
 
-        if (test.createFile()){
-            if (test.setProperty()){
-                returnValue = test.getProperty();
-                System.out.println(returnValue);
-            }else{
-                try {
-                    throw new Exception();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }else if (!test.createFile()){
-            test.createFile();
-            test.setProperty();
-            returnValue = test.getProperty();
-            System.out.println(returnValue);
-            try {
-                throw new Exception();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+        test.setFilePath();
+        test.setProperty();
+        returnValue = test.getProperty();
+        System.out.println(returnValue);
     }
 }

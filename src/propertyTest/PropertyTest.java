@@ -13,28 +13,24 @@ public class PropertyTest {
         this.keyName = keyName;
         this.keyValue = keyValue;
         this.configFilePath = configFilePath;
+        this.configFile = new File(configFilePath);
     }
 
-    public boolean createFile(){
-        configFile = new File(configFilePath);
-        if (!configFile.exists() && !configFile.isFile()){
-            try {
-                FileOutputStream fo = new FileOutputStream(configFilePath);
-                return true;
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-                return false;
-            }
-        }else if (configFile.exists() || configFile.isFile()){
-            return true;
+    public void setFilePath(){
+        if (configFile.exists() || configFile.isFile()){
+            return;
         }else{
-            return false;
+            try {
+                FileOutputStream fos = new FileOutputStream(configFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     public boolean setProperty(){
         try {
-            FileWriter fw = new FileWriter(configFilePath);
+            FileWriter fw = new FileWriter(configFile);
             BufferedWriter bw = new BufferedWriter(fw);
             String twinValue = keyName + "=" + keyValue;
 
@@ -50,7 +46,7 @@ public class PropertyTest {
 
     public String getProperty(){
         try{
-            FileReader fr = new FileReader(configFilePath);
+            FileReader fr = new FileReader(configFile);
             Properties properties = new Properties();
             properties.load(fr);
             return properties.getProperty(keyName);
