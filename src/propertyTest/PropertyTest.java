@@ -7,7 +7,7 @@ public class PropertyTest {
     private String keyName;
     private String keyValue;
     private File configFile;
-    private static final String configFilePath = "src/propertyTest/config.properties";
+    private static final String configFilePath = "src/me/roket/tests/propertyTest/config.properties";
 
     public PropertyTest(String keyName, String keyValue){
         this.keyName = keyName;
