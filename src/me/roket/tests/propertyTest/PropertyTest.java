@@ -1,4 +1,4 @@
-package propertyTest;
+package me.roket.tests.propertyTest;
 
 import java.io.*;
 import java.util.Properties;
@@ -17,24 +17,36 @@ public class PropertyTest {
 
     public void setFilePath(){
         if (configFile.exists() || configFile.isFile()){
-            setProperty();
+            return;
         }else{
             try {
-                FileOutputStream fos = new FileOutputStream(configFile, true);
-                setProperty();
+                FileOutputStream fos = new FileOutputStream(configFile);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
+//    public void setProperty(){
+//        Properties properties = new Properties();
+//        try {
+//            FileInputStream fos = new FileInputStream(configFile);
+//            properties.setProperty(keyName, keyValue);
+//            properties.put(keyName, keyValue);
+//            fos.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
     public void setProperty(){
         try {
             FileWriter fw = new FileWriter(configFile);
             BufferedWriter bw = new BufferedWriter(fw);
-            String twinValue = keyName + "=" + keyValue + "\n";
+            StringBuilder sb = new StringBuilder();
+            StringBuilder twins = sb.append(keyName).append("=").append(keyValue);
 
-            bw.write(twinValue);
+            bw.write(String.valueOf(twins));
             bw.flush();
             bw.close();
         } catch (IOException e) {

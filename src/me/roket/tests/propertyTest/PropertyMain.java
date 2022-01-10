@@ -1,4 +1,4 @@
-package propertyTest;
+package me.roket.tests.propertyTest;
 
 public class PropertyMain {
     public static void main(String[] args) {
@@ -8,6 +8,7 @@ public class PropertyMain {
         String returnValue;
 
         test.setFilePath();
+        test.setProperty();
         returnValue = test.getProperty();
 
         System.out.println(returnValue);
