@@ -1,4 +1,4 @@
-package AES;
+package me.roket.tests.AES;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;

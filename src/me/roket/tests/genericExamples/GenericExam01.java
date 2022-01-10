@@ -1,4 +1,4 @@
-package genericExamples;
+package me.roket.tests.genericExamples;
 
 public class GenericExam01 {
     private Object object;

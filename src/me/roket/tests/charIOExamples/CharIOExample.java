@@ -1,4 +1,4 @@
-package charIOExamples;
+package me.roket.tests.charIOExamples;
 
 import java.io.*;
 
@@ -9,7 +9,7 @@ public class CharIOExample {
         String fileToWrite01;
 
         try {
-            fileToWrite01 = "src/charIOExamples/testFile01.txt";
+            fileToWrite01 = "src/me/roket/tests/charIOExamples/IOExample01.text";
             br = new BufferedReader(new InputStreamReader(System.in));
             pw = new PrintWriter(new FileWriter(fileToWrite01, false));
 

@@ -1,4 +1,4 @@
-package charIOExamples;
+package me.roket.tests.charIOExamples;
 
 import java.io.*;
 
@@ -10,8 +10,8 @@ public class CharIOExample2 {
         String fileToWrite;
 
         try {
-            fileToRead = "src/charIOExamples/CharIOExample2.java";
-            fileToWrite = "src/charIOExamples/testFile02.txt";
+            fileToRead = "src/me/roket/tests/charIOExamples/CharIOExample2.java";
+            fileToWrite = "src/me/roket/tests/charIOExamples/IOExample02.txt";
 
             br = new BufferedReader(new FileReader(fileToRead));
             pw = new PrintWriter(new FileWriter(fileToWrite));

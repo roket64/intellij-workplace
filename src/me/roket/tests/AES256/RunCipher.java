@@ -1,4 +1,4 @@
-package AES256;
+package me.roket.tests.AES256;
 
 import java.util.Scanner;
 

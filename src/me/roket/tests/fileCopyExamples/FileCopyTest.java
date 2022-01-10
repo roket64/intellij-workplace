@@ -1,22 +1,20 @@
-package fileCopyTest;
+package me.roket.tests.fileCopyExamples;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 public class FileCopyTest {
-    public String targetPluginPath;
-    public String pluginDirPath;
-    public String targetPluginCopy;
+    private final String targetPluginFile;
+    private final String targetPluginCopy;
 
-    public FileCopyTest(String targetPluginPath, String pluginDirPath, String targetPluginCopy) {
-        this.targetPluginPath = targetPluginPath;
-        this.pluginDirPath = pluginDirPath;
+    public FileCopyTest(String targetPluginFile, String pluginDirPath, String targetPluginCopy) {
+        this.targetPluginFile = targetPluginFile;
         this.targetPluginCopy = targetPluginCopy;
     }
 
     public boolean copy() {
-        File targetPlugin = new File(targetPluginPath);
+        File targetPlugin = new File(targetPluginFile);
         File pluginCopy = new File(targetPluginCopy);
 
         try {

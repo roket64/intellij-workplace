@@ -1,4 +1,4 @@
-package genericExamples;
+package me.roket.tests.genericExamples;
 
 /*
 Generic은 꺽쇠<>를 써서 사용할 수 있다.

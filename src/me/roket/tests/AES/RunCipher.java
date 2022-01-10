@@ -1,7 +1,4 @@
-package AES;
-
-import AES256.Decryptor;
-import AES256.Encryptor;
+package me.roket.tests.AES;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package fileCheckExamples;
+package me.roket.tests.fileCheckExamples;
 
 import java.io.File;
 
