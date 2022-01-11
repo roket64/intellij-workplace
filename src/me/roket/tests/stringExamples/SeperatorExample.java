@@ -17,12 +17,12 @@ public class SeperatorExample {
         }
         System.out.println(sb.toString());
 
-        // join을 사용하여 구분자를 넣는 예제는 다음과 같다.
+        // join()을 사용하여 구분자를 넣는 예제는 다음과 같다.
         String[] arr02 = {"first", "second", "third"};
         String str = String.join(seperator, arr02);
         System.out.println(str);
 
-        // joiner를 사용하여 구분자를 넣는 예제는 다음과 같다.
+        // joiner()를 사용하여 구분자를 넣는 예제는 다음과 같다.
         String[] arr03 = {"first", "second", "third"};
         StringJoiner sj = new StringJoiner(seperator);
         for (String s: arr03){
