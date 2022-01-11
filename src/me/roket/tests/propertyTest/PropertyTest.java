@@ -40,15 +40,14 @@ public class PropertyTest {
 //    }
 
     public void setProperty(){
-        try {
-            FileWriter fw = new FileWriter(configFile);
-            BufferedWriter bw = new BufferedWriter(fw);
-            StringBuilder sb = new StringBuilder();
-            StringBuilder twins = sb.append(keyName).append("=").append(keyValue);
+        try{
+            OutputStream output = new FileOutputStream(configFile);
+            Properties properties = new Properties();
 
-            bw.write(String.valueOf(twins));
-            bw.flush();
-            bw.close();
+            properties.setProperty(keyName, keyValue);
+            properties.store(output, null);
+
+            output.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
