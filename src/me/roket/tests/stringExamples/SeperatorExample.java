@@ -15,7 +15,7 @@ public class SeperatorExample {
                 sb.append(seperator);
             }
         }
-        System.out.println(sb.toString());
+        System.out.println(sb);
 
         // join()을 사용하여 구분자를 넣는 예제는 다음과 같다.
         String[] arr02 = {"first", "second", "third"};

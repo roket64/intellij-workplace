@@ -6,10 +6,8 @@ public class CharIOExample {
     public static void main(String[] args) throws IOException {
         BufferedReader br = null;
         PrintWriter pw = null;
-        String fileToWrite01;
-
         try {
-            fileToWrite01 = "src/me/roket/tests/charIOExamples/IOExample01.text";
+            String fileToWrite01 = "src/me/roket/tests/charIOExamples/IOExample01.text";
             br = new BufferedReader(new InputStreamReader(System.in));
             pw = new PrintWriter(new FileWriter(fileToWrite01, false));
 
@@ -18,9 +16,9 @@ public class CharIOExample {
 
             pw.println(line);
             File file = new File(fileToWrite01);
-            if (file.exists()){
+            if (file.exists()) {
                 System.out.println("저장에 성공했습니다.");
-            }else{
+            } else {
                 System.out.println("저장에 실패했습니다.");
             }
         } finally {

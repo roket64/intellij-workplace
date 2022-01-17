@@ -7,10 +7,8 @@ public class PropertyMain {
         PropertyTest test = new PropertyTest(testKeyName, testValue);
         String returnValue;
 
-        test.setFilePath();
         test.setProperty();
         returnValue = test.getProperty();
-
         System.out.println(returnValue);
     }
 }

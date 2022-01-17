@@ -15,17 +15,17 @@ public class PropertyTest {
         this.configFile = new File(configFilePath);
     }
 
-    public void setFilePath(){
-        if (configFile.exists() || configFile.isFile()){
-            return;
-        }else{
-            try {
-                FileOutputStream fos = new FileOutputStream(configFile);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+//    public void setFilePath(){
+//        if (configFile.exists() || configFile.isFile()){
+//            return;
+//        }else{
+//            try {
+//                FileOutputStream fos = new FileOutputStream(configFile, false);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 
 //    public void setProperty(){
 //        Properties properties = new Properties();
@@ -41,13 +41,12 @@ public class PropertyTest {
 
     public void setProperty(){
         try{
-            OutputStream output = new FileOutputStream(configFile);
             Properties properties = new Properties();
+            OutputStream out = new FileOutputStream(configFile);
 
-            properties.setProperty(keyName, keyValue);
-            properties.store(output, null);
-
-            output.close();
+            properties.put(keyName, keyValue);
+            properties.store(out, null);
+            out.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
