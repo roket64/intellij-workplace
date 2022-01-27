@@ -8,9 +8,9 @@ public class isPrime {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = Integer.parseInt(br.readLine());
 
-        if (judgePrime(n)){
+        if (judgePrime1(n)) {
             bw.write(String.format("%s is prime number.", n));
-        }else {
+        } else {
             bw.write(String.format("%s is not prime number.", n));
         }
 
@@ -19,7 +19,7 @@ public class isPrime {
         br.close();
     }
 
-    public static boolean judgePrime(int n) {
+    public static boolean judgePrime1(int n) {
         if (n <= 1) {
             return false;
         } else if (n == 2) {
@@ -32,5 +32,22 @@ public class isPrime {
             }
             return true;
         }
+    }
+
+    public static boolean[] primeList(int n) {
+        boolean[] primeList = new boolean[n + 1];
+        primeList[0] = false;
+        primeList[1] = false;
+
+        for (int i = 2; i <= n; i++) {
+            primeList[i] = true;
+        }
+
+        for (int i = 2; i <= Math.pow(n, 2); i++) {
+            for (int j = (int) Math.pow(i, 2); j <= n; j += i) {
+                primeList[j] = false;
+            }
+        }
+        return primeList;
     }
 }
